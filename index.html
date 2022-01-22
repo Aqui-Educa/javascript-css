@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>Meu site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display: flex; flex-wrap: nowrap;">
+    <div class="container">
+        <div>
+            Texto:<br>
+            <input type="text" id="texto">
+            <br><br>
+
+            Cor do texto:<br>
+            <select id="corTexto">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="black">Black</option>
+                <option value="green">Green</option>
+                <option value="white">White</option>
+            </select>
+
+            <br><br>
+
+            Tamanho do texto:<br>
+            <select id="tamanhoTexto">
+                <option value="8pt">8pt</option>
+                <option value="10pt">10pt</option>
+                <option value="14pt">14pt</option>
+                <option value="18pt">18pt</option>
+                <option value="22pt">22pt</option>
+                <option value="28pt">28pt</option>
+                <option value="34pt">34pt</option>
+                <option value="40pt">40pt</option>
+            </select>
+            <br><br>
+
+            Largura:<br>
+            <input type="text" id="largura" style="width: 50px;">px
+            <br><br>
+
+            Altura:<br>
+            <input type="text" id="altura" style="width: 50px;">px
+            <br><br>
+
+            Cor do fundo:<br>
+            <select id="corFundo">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="black">Black</option>
+                <option value="green">Green</option>
+                <option value="white">White</option>
+            </select>
+            <br><br>
+
+            Cor da borda:<br>
+            <select id="corBorda">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="black">Black</option>
+                <option value="green">Green</option>
+                <option value="white">White</option>
+            </select>
+            <br><br>
+
+            <button onclick="aplicar()">Aplicar</button>
+
+            
+        </div>
+    </div>
+
+    <div class="container">        
+        <div id="elemento" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;">
+        </div>            
+    </div>
+<script language="javascript">
+    var elemento = document.getElementById("elemento")
+    
+    elemento.innerText = "Conteúdo"    
+    document.getElementById("texto").value = "Conteúdo"
+    elemento.style.color = "black"
+    document.getElementById("corTexto").value = "black"
+    elemento.style.backgroundColor = "white"
+    document.getElementById("corFundo").value = "white"
+    elemento.style.width = "300px"
+    document.getElementById("largura").value = "300"
+    elemento.style.height = "300px"
+    document.getElementById("altura").value = "300"
+    elemento.style.fontSize = "14pt"
+    document.getElementById("tamanhoTexto").value = "14pt"
+    
+    elemento.style.borderColor = "black"
+    document.getElementById("corBorda").value = "black"
+    elemento.style.borderStyle = "solid"
+    elemento.style.borderWidth = "4px"
+
+    function aplicar(){
+        elemento.innerText = document.getElementById("texto").value
+        elemento.style.color = document.getElementById("corTexto").value
+        elemento.style.backgroundColor = document.getElementById("corFundo").value
+        elemento.style.width = document.getElementById("largura").value + "px"
+        elemento.style.height = document.getElementById("altura").value + "px"
+        elemento.style.fontSize = document.getElementById("tamanhoTexto").value
+        
+        elemento.style.borderColor = document.getElementById("corBorda").value
+        elemento.style.borderStyle = "solid"
+        elemento.style.borderWidth = "4px"
+
+    }
+</script>
+</body>
+</html>
